@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-10-16 13:23:47 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.zzxky_edu.beans.leaveWorde" table="LEAVEWORDE">
+        <id name="leaveWord_id" type="java.lang.Integer">
+            <column name="LEAVEWORD_ID" />
+            <generator class="increment" />
+        </id>
+        <property name="leaveWord_content" type="java.lang.String">
+            <column name="LEAVEWORD_CONTENT" />
+        </property>
+        <property name="leaveWord_name" type="java.lang.String">
+            <column name="LEAVEWORD_NAME" />
+        </property>
+        <property name="leaveWord_telephone" type="java.lang.String">
+            <column name="LEAVEWORD_TELEPHONE" />
+        </property>
+        <property name="leaveWord_email" type="java.lang.String">
+            <column name="LEAVEWORD_EMAIL" />
+        </property>
+        <property name="leaveWord_address" type="java.lang.String">
+            <column name="LEAVEWORD_ADDRESS" />
+        </property>
+    </class>
+</hibernate-mapping>

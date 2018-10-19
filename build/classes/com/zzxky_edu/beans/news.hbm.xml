@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-10-16 13:23:47 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.zzxky_edu.beans.news" table="NEWS">
+        <id name="news_id" type="java.lang.Integer">
+            <column name="NEWS_ID" />
+            <generator class="increment" />
+        </id>
+        <property name="news_titleImage" type="java.lang.String">
+            <column name="NEWS_TITLEIMAGE" />
+        </property>
+        <property name="news_title" type="java.lang.String">
+            <column name="NEWS_TITLE" />
+        </property>
+        <property name="news_content" type="java.lang.String">
+            <column name="NEWS_CONTENT" />
+        </property>
+        <property name="news_video" type="java.lang.String">
+            <column name="NEWS_VIDEO" />
+        </property>
+        <set name="news_contentImage" table="news_contentImage_table" inverse="false" lazy="true">
+            <key>
+                <column name="NEWS_ID" />
+            </key>
+            <element type="java.lang.String">
+                <column name="NEWS_CONTENTIMAGE" />
+            </element>
+        </set>
+        <property name="news_updateTime" type="java.util.Date">
+            <column name="NEWS_UPDATETIME" />
+        </property>
+        <property name="news_readCount" type="java.lang.Integer">
+            <column name="NEWS_READCOUNT" />
+        </property>
+        <property name="news_writer" type="java.lang.String">
+            <column name="NEWS_WRITER" />
+        </property>
+        <property name="news_top" type="boolean">
+            <column name="NEWS_TOP" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-10-16 13:23:47 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.zzxky_edu.beans.lessonType" table="LESSONTYPE">
+        <id name="lessonType_id" type="java.lang.Integer">
+            <column name="LESSONTYPE_ID" />
+            <generator class="increment" />
+        </id>
+        <property name="lessonType_name" type="java.lang.String">
+            <column name="LESSONTYPE_NAME" />
+        </property>
+        <set name="lessonMany" table="LESSONS" inverse="false" cascade="delete" lazy="true">
+            <key>
+                <column name="LESSONTYPE_ID" />
+            </key>
+            <one-to-many class="com.zzxky_edu.beans.lessons" />
+        </set>
+    </class>
+</hibernate-mapping>

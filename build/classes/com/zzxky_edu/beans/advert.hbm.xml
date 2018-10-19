@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-10-16 13:23:47 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.zzxky_edu.beans.advert" table="ADVERT">
+        <id name="advert_id" type="java.lang.Integer">
+            <column name="ADVERT_ID" />
+            <generator class="increment" />
+        </id>
+        <property name="advert_name" type="java.lang.String">
+            <column name="ADVERT_NAME" />
+        </property>
+        <property name="advert_logo" type="java.lang.String">
+            <column name="ADVERT_LOGO" />
+        </property>
+        <property name="advert_qr" type="java.lang.String">
+            <column name="ADVERT_QR" />
+        </property>
+        <property name="advert_video" type="java.lang.String">
+            <column name="ADVERT_VIDEO" />
+        </property>
+        <property name="advert_copyRight" type="java.lang.String">
+            <column name="ADVERT_COPYRIGHT" />
+        </property>
+        <property name="advert_support" type="java.lang.String">
+            <column name="ADVERT_SUPPORT" />
+        </property>
+    </class>
+</hibernate-mapping>

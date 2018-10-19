@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-10-16 13:23:47 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+	<class name="com.zzxky_edu.beans.user" table="USER">
+		<id name="user_id" type="java.lang.Integer">
+			<column name="USER_ID" />
+			<generator class="increment" />
+		</id>
+		<property name="user_telephone" type="java.lang.String">
+			<column name="USER_TELEPHONE" />
+		</property>
+		<property name="user_password" type="java.lang.String">
+			<column name="USER_PASSWORD" />
+		</property>
+		<property name="user_name" type="java.lang.String">
+			<column name="USER_NAME" />
+		</property>
+		<property name="user_email" type="java.lang.String">
+			<column name="USER_EMAIL" />
+		</property>
+		<property name="user_registTime" type="java.util.Date">
+			<column name="USER_REGISTTIME" />
+		</property>
+		<property name="user_loginTime" type="java.util.Date">
+			<column name="USER_LOGINTTIME" />
+		</property>
+
+	</class>
+</hibernate-mapping>

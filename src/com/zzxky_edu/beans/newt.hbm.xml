@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-10-16 13:23:47 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.zzxky_edu.beans.newt" table="NEWT">
+        <id name="newt_id" type="java.lang.Integer">
+            <column name="NEWT_ID" />
+            <generator class="increment" />
+        </id>
+        <property name="newt_type" type="java.lang.String">
+            <column name="NEWT_TYPE" />
+        </property>
+        <property name="newt_image" type="java.lang.String">
+            <column name="NEWT_IMAGE" />
+        </property>
+        <set name="newt_news" table="NEWS" inverse="false" lazy="true">
+            <key>
+                <column name="NEWT_ID" />
+            </key>
+            <one-to-many class="com.zzxky_edu.beans.news" />
+        </set>
+    </class>
+</hibernate-mapping>

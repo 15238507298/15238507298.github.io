@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-10-16 13:23:47 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.zzxky_edu.beans.us" table="US">
+        <id name="us_id" type="java.lang.Integer">
+            <column name="US_ID" />
+            <generator class="increment" />
+        </id>
+        <property name="us_address" type="java.lang.String">
+            <column name="US_ADDRESS" />
+        </property>
+        <property name="us_telephone" type="java.lang.String">
+            <column name="US_TELEPHONE" />
+        </property>
+        <property name="us_qq" type="java.lang.String">
+            <column name="US_QQ" />
+        </property>
+        <property name="us_email" type="java.lang.String">
+            <column name="US_EMAIL" />
+        </property>
+        <property name="us_weixin" type="java.lang.String">
+            <column name="US_WEIXIN" />
+        </property>
+        <property name="us_inetAddress" type="java.lang.String">
+            <column name="US_INETADDRESS" />
+        </property>
+    </class>
+</hibernate-mapping>

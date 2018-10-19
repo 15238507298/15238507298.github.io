@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory name="">
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.password">root</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/zzxky</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+		<property name="hbm2ddl.auto">update</property>
+		<property name="show_sql">true</property>
+		<property name="format_sql">true</property>
+		<mapping resource="com/zzxky_edu/beans/user.hbm.xml" />
+		<mapping resource="com/zzxky_edu/beans/advert.hbm.xml" />
+		<mapping resource="com/zzxky_edu/beans/leaveWorde.hbm.xml" />
+		<mapping resource="com/zzxky_edu/beans/lessons.hbm.xml" />
+		<mapping resource="com/zzxky_edu/beans/lessonType.hbm.xml" />
+		<mapping resource="com/zzxky_edu/beans/map.hbm.xml" />
+		<mapping resource="com/zzxky_edu/beans/news.hbm.xml" />
+		<mapping resource="com/zzxky_edu/beans/newt.hbm.xml" />
+		<mapping resource="com/zzxky_edu/beans/us.hbm.xml" />
+
+	</session-factory>
+</hibernate-configuration>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-10-16 13:23:47 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.zzxky_edu.beans.map" table="MAP">
+        <id name="map_id" type="java.lang.Integer">
+            <column name="MAP_ID" />
+            <generator class="increment" />
+        </id>
+        <property name="map_content" type="java.lang.String">
+            <column name="MAP_CONTENT" />
+        </property>
+        <property name="map_links" type="java.lang.String">
+            <column name="MAP_LINKS" />
+        </property>
+    </class>
+</hibernate-mapping>

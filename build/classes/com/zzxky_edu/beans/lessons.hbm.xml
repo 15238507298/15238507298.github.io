@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-10-21 15:30:25 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.zzxky_edu.beans.lessons" table="LESSONS">
+        <id name="lessons_id" type="java.lang.Integer">
+            <column name="LESSONS_ID" />
+            <generator class="increment" />
+        </id>
+        <property name="lessons_name" type="java.lang.String">
+            <column name="LESSONS_NAME" />
+        </property>
+        <property name="lessons_image" type="java.lang.String">
+            <column name="LESSONS_IMAGE" />
+        </property>
+        <property name="Lessons_video" type="java.lang.String">
+            <column name="LESSONS_VIDEO" />
+        </property>
+        <property name="lessons_introduce" type="java.lang.String">
+            <column name="LESSONS_INTRODUCE" />
+        </property>
+        <property name="lessons_advert" type="java.lang.String">
+            <column name="LESSONS_ADVERT" />
+        </property>
+        <property name="lessons_library" type="java.lang.String">
+            <column name="LESSONS_LIBRARY" />
+        </property>
+        <property name="lessons_teacher" type="java.lang.String">
+            <column name="LESSONS_TEACHER" />
+        </property>
+        <property name="lessons_updateTime" type="java.util.Date">
+            <column name="LESSONS_UPDATETIME" />
+        </property>
+        <set name="lessons_student" table="USER" inverse="false" lazy="true">
+            <key>
+                <column name="LESSONS_ID" />
+            </key>
+            <one-to-many class="com.zzxky_edu.beans.user" />
+        </set>
+        <property name="lessons_money" type="java.lang.Integer">
+            <column name="LESSONS_MONEY" />
+        </property>
+        <property name="lessons_target" type="java.lang.String">
+            <column name="LESSONS_TARGET" />
+        </property>
+        <property name="lessons_concerns" type="java.lang.Integer">
+            <column name="LESSONS_CONCERNS" />
+        </property>
+        <many-to-one name="lessontype" class="com.zzxky_edu.beans.lessonType" fetch="join">
+            <column name="LESSONTYPE" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

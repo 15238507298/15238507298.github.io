@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.multipart.maxSize" value="1000000000"></constant>
+	<constant name="struts.enable.DynamicMethodInvocation"
+		value="false" />
+	<constant name="struts.devMode" value="false" />
+	<!-- 添加 Struts2 package -->
+	<package name="default" namespace="/" extends="struts-default">
+		<!-- 添加 Struts2 Action class对应的时spring配置文件中的bean的id -->
+		<action name="loginUser" class="zzxkyAction" method="loginUser">
+			<result name="success">main.jsp</result>
+			<result name="error">login.jsp</result>
+		</action>
+		<!-- 退出用户 -->
+		<action name="exit_*" class="zzxkyAction" method="exitUser">
+			<result name="success">login.jsp</result>
+			<result name="error">{1}.jsp</result>
+		</action>
+		<!-- 添加新闻 -->
+		<action name="addNews" class="zzxkyAction" method="addNews">
+			<result name="success">index.jsp</result>
+		</action>
+		<!-- 判断用户是否在线 -->
+		<action name="judgeLogin" class="zzxkyAction"
+			method="judgeLogin">
+			<result name="success">main.jsp</result>
+			<result name="error">login.jsp</result>
+		</action>
+		<!-- 遍历所有导航栏 -->
+		<action name="searchMap" class="zzxkyAction" method="searchMap">
+			<result name="success">map_edit.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+		<!-- 添加导航栏 -->
+		<action name="addMap" class="zzxkyAction" method="addMap">
+			<result name="success">map_edit.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+
+		<!-- 添加导航栏 -->
+		<action name="deleteMap" class="zzxkyAction"
+			method="DeleteAloneMap">
+			<result name="success">map_edit.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+
+		<!-- 查询修改的导航栏 -->
+		<action name="searchAloneMap" class="zzxkyAction"
+			method="searchAloneMap">
+			<result name="success">update_mapEdit.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+
+		<!-- 更新某条导航栏信息 -->
+		<action name="updateMap" class="zzxkyAction" method="updateMap">
+			<result name="success">map_edit.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+		<!-- 查询所有留言信息 -->
+		<action name="searchW" class="zzxkyAction" method="searchWord">
+			<result name="success" type="redirect">searchWPage?lword.leaveWord_id=1
+			</result>
+			<result name="error">error.jsp</result>
+		</action>
+		<!-- 查询分页留言信息 -->
+		<action name="searchWPage" class="zzxkyAction"
+			method="searchWordByPage">
+			<result name="success">leaveWord.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+		<!-- 清空留言信息 -->
+		<action name="removeWordAll" class="zzxkyAction"
+			method="removeWordAll">
+			<result name="success">leaveWord.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+
+
+
+		<!-- 清空单条留言 -->
+		<action name="removeSinWord" class="zzxkyAction"
+			method="removeSinWord">
+			<result name="success" type="redirect">searchWPage?lword.leaveWord_id=1
+			</result>
+			<result name="error">error.jsp</result>
+		</action>
+
+		<!-- 清空多条留言 -->
+		<action name="removeManyWord" class="zzxkyAction"
+			method="removeManyWord">
+			<result name="success" type="redirect">searchWPage?lword.leaveWord_id=1
+			</result>
+			<result name="error">error.jsp</result>
+		</action>
+
+		<!-- 查看单条留言 -->
+		<action name="findWord" class="zzxkyAction"
+			method="findOneWord">
+			<result name="success">wordLike.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+
+
+
+		<!-- 模糊查询用户留言 -->
+		<action name="roundFindWord" class="zzxkyAction"
+			method="findRoundWord">
+			<result name="success" type="redirect">wordRoundLike.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+
+
+
+
+
+		<!-- 健康讲堂 -->
+		<!--课程类型分页效果 -->
+		<action name="searchLYPage" class="zzxkyLessonsTypeAction"
+			method="searchLYPage">
+			<result name="success">healthLessonType.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+
+
+		<!--添加课程类型 -->
+		<action name="addLessonType" class="zzxkyLessonsTypeAction"
+			method="addLessonType">
+			<result name="success">searchLYPage?lessonTypes.lessonType_id=1</result>
+			<result name="error">error.jsp</result>
+		</action>
+
+		<!--添加课程类型 -->
+		<action name="deleteLessonType" class="zzxkyLessonsTypeAction"
+			method="deleteLessonType">
+			<result name="success" type="redirect">searchLYPage?lessonTypes.lessonType_id=1
+			</result>
+			<result name="error">error.jsp</result>
+		</action>
+		<!-- 模糊查询用户留言 -->
+		<action name="roundFindLessonType"
+			class="zzxkyLessonsTypeAction" method="roundFindLessonType">
+			<result name="success">roundLessonType.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+
+		<!-- 课程 -->
+		<!-- 根据课程类型显示课程 -->
+
+		<action name="findLessons" class="zzxkyLessonsTypeAction"
+			method="findLessons">
+			<result name="success">healthLessons.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+		<!-- 发布课程之前查询课程类型 -->
+		<action name="searchLessonsBefore"
+			class="zzxkyLessonsTypeAction" method="searchLessonsBefore">
+			<result name="success">addLesson.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+
+		<!-- 发布课程 -->
+		<action name="addLesson" class="zzxkyLessonsTypeAction"
+			method="addLesson">
+			<interceptor-ref name="defaultStack">
+			<param name="fileUpload.maximumSize" >500000000</param>
+
+
+			</interceptor-ref>
+			<result name="success" type="redirect">searchLYPage?lessonTypes.lessonType_id=1</result>
+			<result name="input">error.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+		<!-- 删除单节课程 -->
+		
+			<action name="removeSinleson" class="zzxkyLessonsTypeAction"
+			method="removeSinleson">
+			<result name="success">healthLessons.jsp</result>
+			<result name="error">error.jsp</result>
+			</action>
+	</package>
+
+
+
+</struts>
